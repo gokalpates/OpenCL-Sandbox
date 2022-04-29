@@ -172,6 +172,9 @@
     <ClInclude Include="external\include\CL\cl_platform.h" />
     <ClInclude Include="external\include\CL\opencl.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="kernels\matvec.cl" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
