@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32407.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenCL Sandbox", "OpenCL Sandbox.vcxproj", "{BC1A9E4A-E289-499F-B10D-58D475678F14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC1A9E4A-E289-499F-B10D-58D475678F14}.Debug|x64.ActiveCfg = Debug|x64
+		{BC1A9E4A-E289-499F-B10D-58D475678F14}.Debug|x64.Build.0 = Debug|x64
+		{BC1A9E4A-E289-499F-B10D-58D475678F14}.Release|x64.ActiveCfg = Release|x64
+		{BC1A9E4A-E289-499F-B10D-58D475678F14}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC3BC983-E387-4C6D-83A5-59A8ACA24E8E}
+	EndGlobalSection
+EndGlobal
