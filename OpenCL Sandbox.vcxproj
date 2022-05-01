@@ -156,6 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.c" />
+    <ClCompile Include="source\Utils.c" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="external\libs\opencl.lib" />
@@ -171,6 +172,7 @@
     <ClInclude Include="external\include\CL\cl_gl_ext.h" />
     <ClInclude Include="external\include\CL\cl_platform.h" />
     <ClInclude Include="external\include\CL\opencl.h" />
+    <ClInclude Include="include\Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="kernels\matvec.cl" />
