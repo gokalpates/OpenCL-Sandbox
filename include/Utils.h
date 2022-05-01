@@ -17,3 +17,5 @@ cl_uint get_device_count(cl_platform_id platform);
 cl_uint get_device_count_based_type(cl_platform_id platform, cl_device_info type);
 void get_device_info(cl_device_id device, int device_index);
 void get_all_devices_info(cl_device_id* devices, int device_count);
+
+char* get_source_from_file(char* source_file);

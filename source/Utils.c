@@ -102,3 +102,26 @@ void get_all_devices_info(cl_device_id* devices, int device_count)
         get_device_info(devices[i], i);
     }
 }
+
+char* get_source_from_file(char* source_file)
+{
+    FILE* file_stream = NULL;
+    
+    char* program_buffer = NULL;
+    size_t program_size = 0u;
+
+    file_stream = fopen(source_file, "rb");
+
+    fseek(file_stream, 0, SEEK_END);
+    program_size = ftell(file_stream);
+    rewind(file_stream);
+
+    program_buffer = (char*)malloc(program_size + 1);
+    program_buffer[program_size] = '\0';
+    
+    fread(program_buffer, sizeof(char), program_size, file_stream);
+
+    fclose(file_stream);
+
+    return program_buffer;
+}
