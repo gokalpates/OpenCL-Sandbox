@@ -1,6 +1,3 @@
-#define PROGRAM_FILE "kernels/matvec.cl"
-#define KERNEL_FUNC "matvec_mult"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -76,6 +73,14 @@ int main() {
         printf("ERROR: Could not create command queue.\n");
     }
 
+    int arg = 6;
+
+    cl_mem input_buffer = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_COPY_HOST_PTR, sizeof(arg), &arg, &error);
+    cl_mem output_buffer = clCreateBuffer(context, CL_MEM_WRITE_ONLY, sizeof(int), NULL, &error);
+
+    error = clSetKernelArg(kernel, 0, sizeof(cl_mem), &input_buffer);
+    error = clSetKernelArg(kernel, 1, sizeof(cl_mem), &output_buffer);
+
     size_t work_units_per_kernel = 1;
     error = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, &work_units_per_kernel, NULL, 0, NULL, NULL);
     if (error < 0)
@@ -83,6 +88,12 @@ int main() {
         printf("ERROR: Could not enqueue command queue.\n");
     }
 
+    int result = 0;
+    error = clEnqueueReadBuffer(command_queue, output_buffer, CL_TRUE, 0, sizeof(int), &result, 0, NULL, NULL);
+    printf("Result: %d\n", result);
+
+    clReleaseMemObject(input_buffer);
+    clReleaseMemObject(output_buffer);
     clReleaseCommandQueue(command_queue);
     clReleaseKernel(kernel);
     clReleaseProgram(program);
